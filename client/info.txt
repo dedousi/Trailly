@@ -1,1 +1,2 @@
 This is the client side of the application.
+Packages ".expo" and "node_modules" that get created with the proper installation of the project, are not included.
