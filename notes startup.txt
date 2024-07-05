@@ -1,0 +1,9 @@
+expo application: { username: cs04348@uoi.gr, password: lemon123 }
+
+start client with: npm start
+start server with:
+    1. starting MySQL80 from services app
+    2. npm start
+    3. starting up ngrok: ngrok http --domain=gobbler-tough-monkfish.ngrok-free.app 4000
+
+for testing: run "npm test" instead of "npm start"
