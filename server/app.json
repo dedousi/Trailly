@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "980b3ef5-e8f7-45d6-9b86-a5281f5f4fab"
+      }
+    },
+    "owner": "lemonaded",
+    "slug": "trailly"
+  }
+}
