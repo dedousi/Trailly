@@ -1,2 +1,2 @@
 This is the server side of the application.
-My server uses a specifically built MySQL database.
+My server uses a specifically built MySQL database. The .env file with the information of the said database is not included.
