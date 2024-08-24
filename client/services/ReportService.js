@@ -6,7 +6,7 @@ import RescueService from './RescueService';
 
 async function fetchReport(report_id) {
     try{
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/report/get_report`, {
+        const response = await fetch(`-address-/report/get_report`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ report_id })
@@ -27,7 +27,7 @@ async function fetchReport(report_id) {
 
 async function fetchActiveReports() {
     try{
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/report/get_active_reports`);
+        const response = await fetch(`-address-/report/get_active_reports`);
         if(response.ok){
             const activeReports = await response.json();
             return activeReports;
@@ -44,7 +44,7 @@ async function fetchActiveReports() {
 
 async function updateActiveReportToNonActive(report) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/report/update_active_reports_to_non_active`, {
+        const response = await fetch(`-address-/report/update_active_reports_to_non_active`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ reportID: report })
@@ -89,7 +89,7 @@ async function addReport(category, inputText, trailID, userID) {
     }
     console.log(report)
     try{  
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/report/add_report`, {
+        const response = await fetch(`-address-/report/add_report`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(report)
