@@ -4,7 +4,7 @@ import { Linking, BackHandler, Alert } from 'react-native';
 import MapService from './MapService';
 import AppService from './AppService';
 
-const projectId = '980b3ef5-e8f7-45d6-9b86-a5281f5f4fab';
+const projectId = '';
 let alreadyNotifiedReports = [];
 
 async function clearReportHistory() {
@@ -41,7 +41,7 @@ async function registerForPushNotifications(user_id) {
         }
         const expoToken = await Notifications.getExpoPushTokenAsync({ projectId });
         token = expoToken.data;
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/user/set_notification_token`, {
+        const response = await fetch(`-address-/user/set_notification_token`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_id: user_id, notification_token: token })
@@ -57,7 +57,7 @@ async function registerForPushNotifications(user_id) {
 
 async function fetchReportsForNotifications() {
     try{
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/report/get_active_reports`);
+        const response = await fetch(`-address-/report/get_active_reports`);
         if(response.ok) {
             const data = await response.json();
             return data;
@@ -168,7 +168,7 @@ async function sendNotifications() {
 
 async function sendNotificationToUser(user_id) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/user/get_user`, {
+        const response = await fetch(`-address-/user/get_user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_id })
@@ -209,7 +209,7 @@ async function sendNotificationToUser(user_id) {
 
 async function sendNotificationToVolunteer(user_id) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/user/get_user`, {
+        const response = await fetch(`-address-/user/get_user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_id })
