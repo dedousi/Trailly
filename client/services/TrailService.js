@@ -6,7 +6,7 @@ import xml2js from 'react-native-xml2js';
 
 async function fetchAllPublicTrails(){             
     try{
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/trail/get_all_public_trails`);
+        const response = await fetch(`-address-/trail/get_all_public_trails`);
         if (response.ok) {
             const trails = await response.json();
             return trails;
@@ -23,7 +23,7 @@ async function fetchAllPublicTrails(){
 
 async function fetchUserTrails(user_id) {             
     try{
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/trail/get_user_trails`, {
+        const response = await fetch(`-address-/trail/get_user_trails`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({user_id})
@@ -44,7 +44,7 @@ async function fetchUserTrails(user_id) {
 
 async function fetchTrail(trail_id) {
     try{
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/trail/get_trail`, {
+        const response = await fetch(`-address-/trail/get_trail`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({trail_id})
@@ -65,7 +65,7 @@ async function fetchTrail(trail_id) {
 
 async function removeTrail(trail_id, user_id) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/trail/remove_trails`, {
+        const response = await fetch(`-address-/trail/remove_trails`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ trail_id, user_id })
@@ -132,7 +132,7 @@ async function addTrail(filename, file, use, user_id, details, coords) {
         formData.append('type', type);
         formData.append('details', details);
         formData.append('contents',JSON.stringify(fileToJSON, null));
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/trail/add_trail`, {
+        const response = await fetch(`-address-/trail/add_trail`, {
             method: 'POST',
             headers: { 'Content-Type': 'multipart/form-data' },
             body: formData
@@ -205,7 +205,7 @@ async function fromTCXtoJSON(file) {
 async function searchTrails(user_id, searchQuery) {
     try {
         const words = searchQuery.split(' ').filter(word => word !== '');
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/trail/get_searched_trails`, {
+        const response = await fetch(`-address-/trail/get_searched_trails`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({user_id, words})
@@ -226,7 +226,7 @@ async function searchTrails(user_id, searchQuery) {
 
 async function addAdditionalUsers(user_id, trail_id) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/trail/add_additional_user`, {
+        const response = await fetch(`-address-/trail/add_additional_user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({user_id, trail_id})
