@@ -1,1 +1,2 @@
 This is the server side of the application.
+My server uses a specifically built MySQL database.
