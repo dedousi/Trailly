@@ -60,7 +60,7 @@ async function getTrail(trail) {
  * MapBox API is used as a helping server for showing route to go to 
  * the trail starting point. */
 async function getRoutes(origin, destination) {
-    const apiKey = 'pk.eyJ1IjoibGllbW9uIiwiYSI6ImNsb3VhcDF3ajBrcXcya3EwZndpNnZ3aXEifQ.PoGRTqmD_SNSNBhuIKK7zw';
+    const apiKey = '';
     const apiUrl = `https://api.mapbox.com/directions/v5/mapbox/driving/${origin.longitude},${origin.latitude};${destination.longitude},${destination.latitude}?geometries=geojson&access_token=${apiKey}&alternatives=true`;
     try {
         const response = await fetch(apiUrl);
