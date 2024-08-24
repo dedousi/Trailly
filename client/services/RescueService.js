@@ -9,7 +9,7 @@ import NotificationService from './NotificationService';
 
 async function addWarningToTrailQuery(trail_id, warning) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/rescue/add_warning_to_trail`, {
+        const response = await fetch(`-address-/rescue/add_warning_to_trail`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({trail_id, warning})
@@ -35,7 +35,7 @@ async function addWarningToAllTrailsQuery(loc, warning) {
         const longitude = loc.longitude;
         const locationJSON = { latitude, longitude };
         const location = JSON.stringify(locationJSON);
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/rescue/add_warning_to_location`, {
+        const response = await fetch(`-address-/rescue/add_warning_to_location`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({location, warning})
@@ -80,7 +80,7 @@ async function getTrailsWithLocation(loc,user_id) {
             }
         }
         location = JSON.stringify(location);
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/rescue/get_all_trails_with_location_for_user`, {
+        const response = await fetch(`-address-/rescue/get_all_trails_with_location_for_user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({location, user_id})
@@ -164,7 +164,7 @@ async function getTrailsNearLocation(user_id) {
 async function makeVolunteerTeam(category, location, report_id) {
     try {
         const teamID = uuid.v4();
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/rescue/make_volunteer_team`, {
+        const response = await fetch(`-address-/rescue/make_volunteer_team`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({team_id: teamID, location, category, report_id})
@@ -184,7 +184,7 @@ async function makeVolunteerTeam(category, location, report_id) {
 
 async function fetchVolunteerTeam(report_id) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/rescue/get_volunteer_team`, {
+        const response = await fetch(`-address-/rescue/get_volunteer_team`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({report_id})
@@ -206,7 +206,7 @@ async function addVolunteer(report_id, user_id) {
     if(team[0] == null) return false;
     const team_id = team[0].id;
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/rescue/add_volunteer`, {
+        const response = await fetch(`-address-/rescue/add_volunteer`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({team_id, user_id})
@@ -226,7 +226,7 @@ async function addVolunteer(report_id, user_id) {
 
 async function getTeamSize(team_id) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/rescue/get_number_of_team_members`, {
+        const response = await fetch(`-address-/rescue/get_number_of_team_members`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({team_id})
@@ -277,7 +277,7 @@ async function informVolunteers(report_id) {
 
 async function fetchTeamMembers(team_id) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/rescue/get_volunteers`, {
+        const response = await fetch(`-address-/rescue/get_volunteers`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({team_id})
