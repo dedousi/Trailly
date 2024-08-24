@@ -1,2 +1,3 @@
 This is the server side of the application.
+Packages ".expo" and "node_modules" that get created with the proper installation of the project, are not included.
 My server uses a specifically built MySQL database. The .env file with the information of the said database is not included.
