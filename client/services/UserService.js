@@ -12,7 +12,7 @@ async function register(username, password) {
     }
 
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/user/register`, {
+        const response = await fetch(`-address-/user/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user),
@@ -33,7 +33,7 @@ async function register(username, password) {
 
 async function login(username, password) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/user/login`, {
+        const response = await fetch(`-address-/user/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password }),
@@ -55,7 +55,7 @@ async function login(username, password) {
 
 async function logout(userInfo) {
     try {
-        const response = await fetch(`https://gobbler-tough-monkfish.ngrok-free.app/user/logout`, {
+        const response = await fetch(`-address-/user/logout`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userInfo),
